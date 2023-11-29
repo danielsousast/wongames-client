@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Main from './components/Main/Main'
+import Main from './Main'
 
 export default {
   title: 'Main',
