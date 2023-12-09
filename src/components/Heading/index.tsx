@@ -4,16 +4,16 @@ export interface HeadingProps {
   children: string
   color?: 'white' | 'black'
   lineLeft?: boolean
+  lineBottom?: boolean
 }
 
-const Heading = ({
+export const Heading = ({
   children,
   color = 'white',
-  lineLeft = false
+  lineLeft = false,
+  lineBottom = false
 }: HeadingProps) => (
-  <S.Wrapper color={color} lineLeft={lineLeft}>
+  <S.Wrapper $color={color} $lineLeft={lineLeft} $lineBottom={lineBottom}>
     {children}
   </S.Wrapper>
 )
-
-export default Heading

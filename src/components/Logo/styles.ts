@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 interface WrapperProps {
   color?: 'white' | 'black'
   size?: 'normal' | 'large'
-  hideOnMobile?: boolean
+  $hideOnMobile?: boolean
 }
 
 const wrapperModifiers = {
@@ -32,9 +32,9 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, color, size, hideOnMobile }) => css`
+  ${({ theme, color, size, $hideOnMobile }) => css`
     color: ${theme.colors[color!]};
     ${!!size && wrapperModifiers[size]}
-    ${!!hideOnMobile && wrapperModifiers.hideOnMobile}
+    ${!!$hideOnMobile && wrapperModifiers.hideOnMobile}
   `}
 `
