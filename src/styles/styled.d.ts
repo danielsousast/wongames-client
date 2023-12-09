@@ -1,8 +1,14 @@
-import theme from 'styles/theme'
+import type { CSSProp } from 'styled-components'
+import Theme from './theme'
 
-// inferência de tipos
-type Theme = typeof theme
+type ThemeType = typeof Theme
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends ThemeType {}
+}
+
+declare module 'react' {
+  interface DOMAttributes<T> {
+    css?: CSSProp
+  }
 }

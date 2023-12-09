@@ -1,21 +1,20 @@
 import { Meta, StoryObj } from '@storybook/react'
 import MediaMatch from '.'
 
-const meta: Meta<typeof MediaMatch> = {
-  component: MediaMatch
-}
+export default {
+  title: 'MediaMatch',
+  component: MediaMatch,
+  args: {}
+} as Meta
 
-export default meta
-type Story = StoryObj<typeof MediaMatch>
-
-export const Desktop: Story = {
+export const Desktop: StoryObj = {
   args: {
     $greaterThan: 'medium',
     children: <h1>Desktop</h1>
   }
 }
 
-export const Mobile: Story = {
+export const Mobile: StoryObj = {
   args: {
     $lessThan: 'medium',
     children: <h1>Mobile</h1>
