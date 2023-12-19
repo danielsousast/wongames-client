@@ -8,10 +8,16 @@ type Props = Omit<HeadingProps, 'children'>
 const makeSut = ({
   lineBottom = false,
   lineLeft = false,
-  color = 'white'
+  color = 'white',
+  size = 'medium'
 }: Props) =>
   renderWithTheme(
-    <Heading lineBottom={lineBottom} lineLeft={lineLeft} color={color}>
+    <Heading
+      size={size}
+      lineBottom={lineBottom}
+      lineLeft={lineLeft}
+      color={color}
+    >
       Won Games
     </Heading>
   )
@@ -50,7 +56,7 @@ describe('<Logo />', () => {
         name: /won games/i
       })
     ).toHaveStyle({
-      'border-left': '0.7rem solid #3CD3C1'
+      'border-left': '0.7rem solid #F231A5'
     })
   })
 
@@ -65,5 +71,41 @@ describe('<Logo />', () => {
     ).toHaveStyleRule('border-bottom', '0.5rem solid #F231A5', {
       modifier: '::after'
     })
+  })
+
+  it('should render a heading with a small size', () => {
+    makeSut({
+      size: 'small',
+      lineBottom: true
+    })
+    expect(
+      screen.getByRole('heading', {
+        name: /won games/i
+      })
+    ).toHaveStyle({
+      'font-size': '1.6rem'
+    })
+
+    expect(
+      screen.getByRole('heading', {
+        name: /won games/i
+      })
+    ).toHaveStyleRule('width', '3rem', {
+      modifier: '::after'
+    })
+  })
+
+  it('should render a heading with a primary line color', () => {
+    makeSut({
+      lineBottom: true,
+      lineLeft: true
+    })
+    const heading = screen.getByRole('heading', {
+      name: /won games/i
+    })
+    expect(heading).toHaveStyleRule('border-bottom', '0.5rem solid #F231A5', {
+      modifier: '::after'
+    })
+    expect(heading).toHaveStyleRule('border-left', '0.7rem solid #F231A5')
   })
 })
