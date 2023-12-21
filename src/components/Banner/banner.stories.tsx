@@ -19,5 +19,9 @@ export default {
 type Story = StoryObj<typeof Banner>
 
 export const Default: Story = {
-  render: (args) => <Banner {...args} />
+  render: (args) => (
+    <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
 }
