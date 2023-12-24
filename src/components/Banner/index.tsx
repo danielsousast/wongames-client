@@ -1,4 +1,5 @@
 import Button from '../Button'
+import { Ribbon } from '../Ribbon'
 import * as S from './styles'
 
 export interface BannerProps {
@@ -7,6 +8,9 @@ export interface BannerProps {
   subtitle: string
   buttonLabel: string
   buttonLink: string
+  ribbon?: string
+  ribbonSize?: 'normal' | 'small'
+  ribbonColor?: 'primary' | 'secondary'
 }
 
 export const Banner = ({
@@ -14,9 +18,18 @@ export const Banner = ({
   title,
   subtitle,
   buttonLabel,
-  buttonLink
+  buttonLink,
+  ribbon,
+  ribbonSize = 'normal',
+  ribbonColor = 'primary'
 }: BannerProps) => (
   <S.Wrapper>
+    {!!ribbon && (
+      <Ribbon color={ribbonColor} size={ribbonSize}>
+        {ribbon}
+      </Ribbon>
+    )}
+
     <S.Image src={image} role="img" aria-label={title} />
 
     <S.Caption>

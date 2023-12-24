@@ -25,3 +25,16 @@ export const Default: Story = {
     </div>
   )
 }
+
+export const withRibbon: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  ),
+  args: {
+    ribbon: '20% OFF',
+    ribbonSize: 'small',
+    ribbonColor: 'secondary'
+  }
+}
