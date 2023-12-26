@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 type WrapperProps = {
-  backgroundImage: string
+  $backgroundImage: string
   alignment?: 'right' | 'left'
 }
 
@@ -27,10 +27,10 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.main<WrapperProps>`
-  ${({ backgroundImage, alignment }) => css`
+  ${({ $backgroundImage, alignment }) => css`
     position: relative;
     height: 23rem;
-    background-image: url(${backgroundImage});
+    background-image: url(${$backgroundImage});
     background-position: center center;
     background-size: cover;
 

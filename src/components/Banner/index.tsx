@@ -1,6 +1,6 @@
 import Button from '../Button'
 import { Ribbon } from '../Ribbon'
-import * as S from './styles'
+import * as S from './banner.styles'
 
 export interface BannerProps {
   image: string

@@ -7,7 +7,7 @@ import Button from '../Button'
 import * as S from './styles'
 import { Ribbon } from '../Ribbon'
 
-interface GameCardProps {
+export interface GameCardProps {
   title: string
   developer: string
   img: string
