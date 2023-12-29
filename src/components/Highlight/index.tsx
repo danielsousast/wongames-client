@@ -1,7 +1,7 @@
 import Button from '../Button'
 import * as S from './styles'
 
-interface HighlightProps {
+export interface HighlightProps {
   title: string
   subtitle: string
   buttonLabel: string

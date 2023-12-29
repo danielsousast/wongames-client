@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import * as BannerStyles from '../Banner/banner.styles'
 
-export const Wrapper = styled.section`
+export const BannerSliderWrapper = styled.section`
   ${({ theme }) => css`
     .slick-dots {
       list-style: none;
@@ -33,7 +33,7 @@ export const Wrapper = styled.section`
       }
     }
     ${media.greaterThan('large')`
-      ${BannerStyles.Wrapper} {
+      ${BannerStyles.BannerWrapper} {
         max-width: 104rem;
         margin: 0 auto;
       }

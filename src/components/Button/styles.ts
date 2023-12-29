@@ -1,9 +1,11 @@
+import { darken } from 'polished'
 import styled, { DefaultTheme, css } from 'styled-components'
 
 interface WrapperProps {
   size?: 'small' | 'medium' | 'large'
   $fullWidth?: boolean
   $hasIcon: boolean
+  $minimal?: boolean
 }
 
 const wrapperModifiers = {
@@ -32,11 +34,19 @@ const wrapperModifiers = {
         margin-left: ${theme.spacings.xxsmall};
       }
     }
+  `,
+  minimal: (theme: DefaultTheme) => css`
+    background: none;
+    color: ${theme.colors.primary};
+
+    &:hover {
+      background: none;
+    }
   `
 }
 
-export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, $fullWidth, $hasIcon }) => css`
+export const ButtonWrapper = styled.button<WrapperProps>`
+  ${({ theme, size, $fullWidth, $hasIcon, $minimal }) => css`
     border: 0;
     cursor: pointer;
     color: ${theme.colors.white};
@@ -53,7 +63,8 @@ export const Wrapper = styled.button<WrapperProps>`
     }
 
     ${!!size && wrapperModifiers[size](theme)}
-    ${!!$fullWidth && wrapperModifiers.fullWidth()}
-    ${!!$hasIcon && wrapperModifiers.withIcon(theme)}
+    ${$fullWidth && wrapperModifiers.fullWidth()}
+    ${$hasIcon && wrapperModifiers.withIcon(theme)}
+    ${$minimal && wrapperModifiers.minimal(theme)}
   `}
 `

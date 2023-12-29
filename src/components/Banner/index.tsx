@@ -23,7 +23,7 @@ export const Banner = ({
   ribbonSize = 'normal',
   ribbonColor = 'primary'
 }: BannerProps) => (
-  <S.Wrapper>
+  <S.BannerWrapper>
     {!!ribbon && (
       <Ribbon color={ribbonColor} size={ribbonSize}>
         {ribbon}
@@ -39,5 +39,5 @@ export const Banner = ({
         {buttonLabel}
       </Button>
     </S.Caption>
-  </S.Wrapper>
+  </S.BannerWrapper>
 )

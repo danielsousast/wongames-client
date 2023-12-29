@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import * as RibbonStyles from '../Ribbon/styles'
 
-export const Wrapper = styled.main`
+export const BannerWrapper = styled.main`
   position: relative;
 
   ${media.greaterThan('medium')`
