@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from './checkbox'
 
 export default {
-  title: 'Checkbox',
+  title: 'Form/Checkbox',
   component: Checkbox
 } as Meta
 
